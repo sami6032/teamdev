@@ -31,9 +31,10 @@ Auth::routes();
 Route::get('programme', [App\Http\Controllers\ForumController::class, 'programme'])->name('programme');
 
 Route::get('home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
 Route::get('admin/home', [HomeController::class, 'adminHome'])->name('admin.home')->middleware('is_admin');
 
-//evenemet
+//evenement
 Route::get('evenement', [App\Http\Controllers\EvenementController::class, 'traiterEven'])->name('evenement');
 Route::post('evenement', [EvenementController::class,'traitEven'])->name('evenementCreate');
 Route::get('AjouterEven', [EvenementController::class,'AjouterEven'])->name('AjouterEven');
